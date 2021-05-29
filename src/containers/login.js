@@ -5,13 +5,10 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	Collapse,
-	Container,
 	Navbar,
 	NavbarToggler,
-	NavbarBrand,
 	Nav,
 	NavItem,
-	NavLink,
 	Button,
 	UncontrolledDropdown,
 	DropdownToggle,
@@ -19,8 +16,10 @@ import {
 	DropdownItem
 } from 'reactstrap';
 
+import '../css/login.css';
+
 const Login = (props) => {
-	const { loggedIn, reduxLogin, reduxLogout } = props;
+	const { reduxLogin, reduxLogout } = props;
 
 	const [ isOpen, setIsOpen ] = useState(false);
 	const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
@@ -36,11 +35,11 @@ const Login = (props) => {
 			returnTo: window.location.origin
 		});
 	};
+
 	return (
 		<div id="login">
 			<div className="">
 				<Navbar color="light" light expand="md">
-					<Container>
 						<NavbarToggler onClick={toggle} />
 						<Collapse isOpen={isOpen} navbar>
 							<Nav className="d-none d-md-block" navbar>
@@ -50,7 +49,7 @@ const Login = (props) => {
 											id="qsLoginBtn"
 											color="primary"
 											className="btn-margin"
-											onClick={() => loginWithRedirect()}
+											onClick={() => {loginWithRedirect(); reduxLogin()}}
 										>
 											Log in
 										</Button>
@@ -76,7 +75,7 @@ const Login = (props) => {
 											>
 												<FontAwesomeIcon icon="user" className="mr-3" /> Profile
 											</DropdownItem>
-											<DropdownItem id="qsLogoutBtn" onClick={() => logoutWithRedirect()}>
+											<DropdownItem id="qsLogoutBtn" onClick={() => {logoutWithRedirect(); reduxLogin()}}>
 												<FontAwesomeIcon icon="power-off" className="mr-3" /> Log out
 											</DropdownItem>
 										</DropdownMenu>
@@ -125,16 +124,13 @@ const Login = (props) => {
 								</Nav>
 							)}
 						</Collapse>
-					</Container>
 				</Navbar>
 			</div>
 		</div>
 	);
 };
 
-const sToP = (state) => ({
-	loggedIn: state.login.loggedIn
-});
+const sToP = (state) => ({});
 
 const dToP = (dispatch) => ({
 	reduxLogin: (userData) =>

@@ -13,8 +13,8 @@ const Home = ( props ) => {
     }
     
     return (
-        <div id="home">
-            <div className="container">
+        <div id="home viewer">
+            <div className="custom-container">
                 {/* <Count /> */}
                 <button onClick={toAnalyze}> Analysis </button>
             </div>
