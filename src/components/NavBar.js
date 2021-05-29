@@ -39,7 +39,7 @@ const NavBar = () => {
     <div className="nav-container">
       <Navbar color="light" light expand="md">
         <Container>
-          <NavbarBrand className="logo" />
+          <NavbarBrand className="logo">logo</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -51,6 +51,16 @@ const NavBar = () => {
                   activeClassName="router-link-exact-active"
                 >
                   Home
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  tag={RouterNavLink}
+                  to="/analysis"
+                  exact
+                  activeClassName="router-link-exact-active"
+                >
+                  Analysis
                 </NavLink>
               </NavItem>
               {isAuthenticated && (

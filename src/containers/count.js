@@ -123,9 +123,11 @@ export default function Count() {
 						Reset
 					</button>
 				</div>
+
+				<p>Press start and let's starting breathing</p>
 				<div>
 					<p>
-						Button clicked <span id="disp">{count}</span> Times
+          You took <span id="disp">{count}</span> Breaths
 					</p>
 				</div>
 				<div class="buttons">

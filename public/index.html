@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>breathe</title>
-        <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+
 </head>
 
 
@@ -29,6 +30,47 @@
                 window.kommunicate = m;
                 m._globals = kommunicateSettings;
             })(document, window.kommunicate || {});
+        </script>
+        <audio id="breatheIn" src="breathIn.mp3"></audio>
+        <audio id="breatheOut" src="breathIn.mp3"></audio>
+        <div>Track one: <span id="playStatus1">stopped</span></div>
+        <div>Track two: <span id="playStatus2">stopped</span></div>
+        <div>Listening to: <span id="currTrack">nothing</span></div>
+
+        <script>
+            var startButton = document.getElementById("Breather");
+            var track1 = document.getElementById("audio1");
+            var track2 = document.getElementById("audio2");
+            var status1 = document.getElementById("playStatus1");
+            var status2 = document.getElementById("playStatus2");
+            var currTrack = document.getElementById("currTrack");
+
+            var play1 = true;
+            var started = false;
+
+            startButton.onclick = function () {
+                if (play1 == true) {
+                    track2.currentTime = 0;
+                    track2.pause();
+                    track1.play();
+                    status2.innerHTML = "stopped"
+                    status1.innerHTML = "playing";
+                    currTrack.innerHTML = "Track 1";
+                    play1 = false;
+                    counter();
+                    change();
+
+                } else if (play1 == false) {
+                    track1.currentTime = 0;
+                    track1.pause();
+                    status1.innerHTML = "stopped";
+                    status2.innerHTML = "playing";
+                    track2.play();
+                    currTrack.innerHTML = "Track 2";
+                    play1 = true;
+                    change();
+                }
+            }
         </script>
     </div>
 </body>
