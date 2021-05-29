@@ -12,9 +12,12 @@ export function getConfig() {
       ? configJson.audience
       : null;
 
+  const graphCMS = "https://api-eu-central-1.graphcms.com/v2/ckp9dhs06n1et01xpbrd37gd4/master?query=%7B%0A%20%20products%7B%0A%20%20%20%20name%0A%20%20%20%20breath%0A%20%20%7D%0A%7D";
+
   return {
     domain: configJson.domain,
     clientId: configJson.clientId,
     ...(audience ? { audience } : null),
+    graphCMS,
   };
 }

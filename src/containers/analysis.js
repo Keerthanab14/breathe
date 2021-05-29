@@ -1,27 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
 import { AreaChart, XAxis, YAxis, Tooltip, Area } from 'recharts';
 import { connect } from 'react-redux';
+import { request } from 'graphql-request';
 
 import Loading from '../components/Loading';
-import Data from '../config/testData.json';
+// import Data from '../config/testData.json';
 import NoAccess from '../containers/noAccess';
+import { graphCMS as api } from '../config/config';
 
 export const Analysis = (props) => {
 	const { user } = useAuth0();
-  console.log("user", user);
+	const [ data, setData ] = useState(null);
 
-	const rangeData = Data.data;
-  console.log(rangeData);
+	useEffect(() => {
+		const fetchData = async () => {
+			const { products } = await request(
+				'https://api-eu-central-1.graphcms.com/v2/ckp9dhs06n1et01xpbrd37gd4/master?query=%7B%0A%20%20products%7B%0A%20%20%20%20name%0A%20%20%20%20breath%0A%20%20%7D%0A%7D',
+				`
+      { 
+        products {
+          name
+          breath
+        }
+      }
+    `
+			);
+
+			setData(products);
+		};
+
+		fetchData();
+	}, []);
 
 	return (
 		<div className="mb-5 viewer" id="analysis">
 			<div className="custom-container">
-        <h1>Breathing Trend for {user.given_name}</h1>
+				<h1>Breathing Trend for {user.given_name}</h1>
 				<AreaChart
 					width={730}
 					height={250}
-					data={rangeData}
+					data={data}
 					margin={{
 						top: 20,
 						right: 20,
