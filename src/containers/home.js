@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import '../css/home.css';
+
 // import Count from './count';
 
 const Home = (props) => {
@@ -14,7 +16,7 @@ const Home = (props) => {
 			<div className="custom-container">
 				{/* <Count /> */}
 				<Link to="/analysis">
-					<button> Analysis </button>
+					<span className="round-main-btn"> Analysis </span>
 				</Link>
 			</div>
 		</div>

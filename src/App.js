@@ -1,14 +1,14 @@
 import './css/App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './config/routes';
-import Login from './containers/login';
+import Nav from './containers/nav';
 
 function App() {
 	return (
 		<Router>
 			<div className="App">
 				<header className="App-header">
-					<Login />
+					<Nav />
 				</header>
 				<Routes />
 			</div>
