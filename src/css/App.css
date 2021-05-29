@@ -14,11 +14,23 @@ header {
   top: 0;
   left: 0;
   align-items: flex-end;
+  height: 5rem;
 }
 
 .custom-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 80vw;
+  min-height: 100vh;
+}
+
+.viewer {
+  width: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

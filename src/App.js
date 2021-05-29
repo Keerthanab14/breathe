@@ -5,14 +5,14 @@ import Login from './containers/login';
 
 function App() {
 	return (
-		<div className="App">
-			<Router>
+		<Router>
+			<div className="App">
 				<header className="App-header">
 					<Login />
 				</header>
 				<Routes />
-			</Router>
-		</div>
+			</div>
+		</Router>
 	);
 }
 
