@@ -141,3 +141,15 @@ const dToP = (dispatch) => ({
 });
 
 export default connect(sToP, dToP)(Header);
+
+// <header>
+// <img class="logo" src="logo.png" height="100" alt="logo">
+// <nav>
+// 	<ul class="nav__links">
+// 		<li><a href="#">Graphs</a></li>
+// 		<li><a href="#">Team</a></li>
+// 		<li><a href="#">About</a></li>
+// 	</ul>
+// </nav>
+// <a class="cta" href="#"><button>Login</button></a>
+// </header>

@@ -3,21 +3,19 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import '../css/home.css';
+import Count from '../containers/count';
 
 // import Count from './count';
 
 const Home = (props) => {
-	const toAnalyze = () => {
-		return;
-	};
 
 	return (
-		<div id="home viewer">
+		<div id="home">
 			<div className="custom-container">
-				{/* <Count /> */}
 				<Link to="/analysis">
 					<span className="round-main-btn"> Analysis </span>
 				</Link>
+				<Count />
 			</div>
 		</div>
 	);

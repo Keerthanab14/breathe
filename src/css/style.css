@@ -14,21 +14,21 @@ button {
     text-decoration: none;
 
 }
-
+/* 
 li,a{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #1d2a2e;
     text-decoration: none;
-}
+} */
 
-header {
+/* header {
     display: flex;
     justify-content:space-between;
     align-items: center;
     padding: 30px 10%;
-}
+} */
 
 .logo{
     cursor: pointer;
@@ -64,18 +64,15 @@ button:hover{
     background-color: rgba(0,136,169,0.8);
 }
 
-.count-container{
+.count-ontainer{
     height: 300px;
     width: 100%;
     min-height: 100vh;
 }
 
-.timer-prompt{
-    font-size: 25px;
-}
 #display{
     width: 100%;
-    font-size: 50px;
+    font-size: 100px;
     text-align: center;
     margin: 0px;
 }
@@ -109,8 +106,8 @@ background-image: linear-gradient(315deg, #09c7fb 0%, #93fb9d 74%);
 
 
 .btn-1 {
-    width: 60;
-    height: 55px;
+    width: 100;
+    height: 100px;
     border: none;
     color: black;
    background-color: #89d8d3;
