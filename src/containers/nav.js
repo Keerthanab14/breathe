@@ -40,7 +40,7 @@ const Header = (props) => {
 	};
 
 	return (
-		<Navbar color="light" light expand="md" className="custom-nav App-header">
+		<Navbar light expand="md" className="custom-nav App-header">
 			<Container className="justify">
 				<NavbarBrand><img src={Logo} alt="logo" class="logo"/></NavbarBrand>
 				<NavbarToggler onClick={toggle} />
