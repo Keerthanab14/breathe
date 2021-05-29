@@ -12,6 +12,7 @@ export const Analysis = (props) => {
   console.log("user", user);
 
 	const rangeData = Data.data;
+  console.log(rangeData);
 
 	return (
 		<div className="mb-5 viewer" id="analysis">

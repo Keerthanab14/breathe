@@ -1,11 +1,11 @@
 {
     "data": [
-        { "name" : "5/27/21", "value": 12 },
-        { "name" : "5/28/21", "value": 10 },
-        { "name" : "5/29/21", "value": 0 },
-        { "name" : "5/30/21", "value": 2 },
-        { "name" : "5/31/21", "value": 9 },
-        { "name" : "6/1/21", "value": 12 },
-        { "name" : "6/2/21", "value": 11 }
+        { "name" : "5/27/21", "breath": 12 },
+        { "name" : "5/28/21", "breath": 10 },
+        { "name" : "5/29/21", "breath": 0 },
+        { "name" : "5/30/21", "breath": 2 },
+        { "name" : "5/31/21", "breath": 9 },
+        { "name" : "6/1/21", "breath": 12 },
+        { "name" : "6/2/21", "breath": 11 }
     ]
 }
