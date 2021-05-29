@@ -80,6 +80,11 @@ function reset(){
     if(status == "started"){
         startStop();
     }
+    if(document.getElementById("Breather").value == "Exhale"){
+        change();
+    }
+    reset_count();
+    
     
 }
 
@@ -102,15 +107,22 @@ function counter(){
   function change() {
 
     var btn = document.getElementById("Breather");
-
+    reset_timer();
     if (btn.value == "Inhale") {
         btn.value = "Exhale";
         btn.innerHTML = "Exhale";
+        
+        
     }
     else {
         btn.value = "Inhale";
         btn.innerHTML = "Inhale";
+        
+      
+        
     }
+    
+    
 }
 
 // Reset Timer and Button click counter
@@ -119,5 +131,28 @@ function reset_count() {
     disp.innerHTML = 0;
 
 }
+
+
+
+// 3 second countdown
+
+
+let time = 3
+const countdownEl = document.getElementById("timer");
+setInterval(updateCountdown, 1000);
+
+function reset_timer(){
+    time = 3
+}
+function updateCountdown() {
+   
+    if(time >= 0){
+    document.getElementById("timer").innerHTML = time;
+    time--;
+    }
+}
+
+
+
 
 

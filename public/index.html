@@ -23,8 +23,7 @@
             </nav>
             <a class="cta" href="#"><button>Login</button></a>
         </header>
-        <p>Press start and let's starting breathing
-        </p>
+        <p class = "title1">Press start and let's starting breathing</p>
         <div class="container">
             <div id="display"> 
                 00:00:00
@@ -43,6 +42,12 @@
                     id="disp">0</span> Breaths
                 </p>
             </div>
+            <div>
+                <p class="timer-prompt">
+                Next Inhale/Exhale in <span id="timer">3</span> seconds
+                </p>
+            </div>
+        
             <audio id="breatheIn" src="breathIn.mp3"></audio>
             <audio id="breatheOut" src="breathIn.mp3"></audio>
             <div class="buttons">
@@ -52,9 +57,9 @@
 
         <audio id="audio1" src="breathIn.mp3"></audio>
         <audio id="audio2" src="breathOut.mp3"></audio>
-        <div>Track one: <span id="playStatus1">stopped</span></div>
-        <div>Track two: <span id="playStatus2">stopped</span></div>
-        <div>Listening to: <span id="currTrack">nothing</span></div>
+        <div><span id="playStatus1"></span></div>
+        <div><span id="playStatus2"></span></div>
+        <div><span id="currTrack"></span></div>
 
         <script>
             var startButton = document.getElementById("Breather");
