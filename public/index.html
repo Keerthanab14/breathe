@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Breathe</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title<breathe</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
 
 
-<body>
+    <body>
+        <div class="container">
+            <div id="display">
+                00:00:00
+            </div>
 
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-    </div>
-</body>
 
+            <div class="buttons">
+                <button class="btn-1" id="startStop" onclick="startStop()">Start</button>
+                <button class="btn-1" id="reset" onclick="reset(),reset_count()">Reset</button>
+                
+            </div>
+
+            <div>
+                <p>
+                    Button clicked <span
+                    id="disp">0</span> Times
+                </p>
+            </div>
+            <div class="buttons">
+                <button class="Breather" onclick="change(),counter()" id="Breather" value="Inhale">Inhale</button>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings = 
+            {"appId":"39620f76374c3677cc24cf60f113c84df","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+
+</script>
+    </body> 
+ 
 </html>
+
+
