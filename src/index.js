@@ -9,6 +9,7 @@ import history from "./utils/history";
 import { getConfig } from "./config/config";
 
 import './css/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

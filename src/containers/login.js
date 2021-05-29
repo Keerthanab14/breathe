@@ -41,6 +41,7 @@ const Login = (props) => {
 			<div className="">
 				<Navbar color="light" light expand="md">
 					<Container>
+						<NavbarToggler onClick={toggle} />
 						<Collapse isOpen={isOpen} navbar>
 							<Nav className="d-none d-md-block" navbar>
 								{!isAuthenticated && (

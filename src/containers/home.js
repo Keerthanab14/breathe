@@ -9,8 +9,6 @@ const Home = ( props ) => {
 
     
     const toAnalyze = () => {
-
-
         return <Redirect to="/analyze" />
     }
     
@@ -18,7 +16,7 @@ const Home = ( props ) => {
         <div id="home">
             <div className="container">
                 {/* <Count /> */}
-                <button onClick={toAnalyze}/>
+                <button onClick={toAnalyze}> Analysis </button>
             </div>
         </div>
     )
