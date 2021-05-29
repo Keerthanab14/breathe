@@ -1,57 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title<breathe</title>
-        <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="script.js"></script>
-    </head>
-    
-    <body>
-        
-        <header>
-            <img class="logo" src = "logo.png" height="100" alt="logo">
-            <nav>
-                <ul class="nav__links">
-                    <li><a href="#">Graphs</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </nav>
-            <a class="cta" href="#"><button>Login</button></a>
-        </header>
-        <p>Press start and let's starting breathing
-        </p>
-        <div class="container">
-            <div id="display"> 
-                00:00:00
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>breathe</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+
+</head>
 
 
-            <div class="buttons">
-                <button class="btn-1" id="startStop" onclick="startStop()">Start</button>
-                <button class="btn-1" id="reset" onclick="reset(),reset_count()">Reset</button>
-                
-            </div>
-
-            <div>
-                <p>
-                    You took <span
-                    id="disp">0</span> Breaths
-                </p>
-            </div>
-            <audio id="breatheIn" src="breathIn.mp3"></audio>
-            <audio id="breatheOut" src="breathIn.mp3"></audio>
-            <div class="buttons">
-                <button class="Breather" onclick="change(),counter()" id="Breather" value="Inhale">Inhale</button>
-            </div>
-        </div>
-
-        <audio id="audio1" src="breathIn.mp3"></audio>
-        <audio id="audio2" src="breathOut.mp3"></audio>
+<body>
+    <div id="root">
+        <script type="text/javascript">
+            (function (d, m) {
+                var kommunicateSettings = {
+                    "appId": "39620f76374c3677cc24cf60f113c84df",
+                    "popupWidget": true,
+                    "automaticChatOpenOnNavigation": true
+                };
+                var s = document.createElement("script");
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+                var h = document.getElementsByTagName("head")[0];
+                h.appendChild(s);
+                window.kommunicate = m;
+                m._globals = kommunicateSettings;
+            })(document, window.kommunicate || {});
+        </script>
+        <audio id="breatheIn" src="breathIn.mp3"></audio>
+        <audio id="breatheOut" src="breathIn.mp3"></audio>
         <div>Track one: <span id="playStatus1">stopped</span></div>
         <div>Track two: <span id="playStatus2">stopped</span></div>
         <div>Listening to: <span id="currTrack">nothing</span></div>
@@ -63,50 +44,35 @@
             var status1 = document.getElementById("playStatus1");
             var status2 = document.getElementById("playStatus2");
             var currTrack = document.getElementById("currTrack");
-            
+
             var play1 = true;
             var started = false;
-       
-            startButton.onclick = function(){
-              if(play1 == true){
-                track2.currentTime = 0;
-                track2.pause();
-                track1.play();
-                status2.innerHTML = "stopped"
-                status1.innerHTML = "playing";
-                currTrack.innerHTML = "Track 1";
-                play1 = false;
-                counter();
-                change();
-                
-              }
-              else if (play1 == false){
-                track1.currentTime = 0;
-                track1.pause();
-                status1.innerHTML = "stopped";
-                status2.innerHTML = "playing";
-                track2.play();
-                currTrack.innerHTML = "Track 2";
-                play1 = true;
-                change();
-              }       
+
+            startButton.onclick = function () {
+                if (play1 == true) {
+                    track2.currentTime = 0;
+                    track2.pause();
+                    track1.play();
+                    status2.innerHTML = "stopped"
+                    status1.innerHTML = "playing";
+                    currTrack.innerHTML = "Track 1";
+                    play1 = false;
+                    counter();
+                    change();
+
+                } else if (play1 == false) {
+                    track1.currentTime = 0;
+                    track1.pause();
+                    status1.innerHTML = "stopped";
+                    status2.innerHTML = "playing";
+                    track2.play();
+                    currTrack.innerHTML = "Track 2";
+                    play1 = true;
+                    change();
+                }
             }
-    
-          </script>
-        
-        <script type="text/javascript">
-    (function(d, m){
-        var kommunicateSettings = 
-            {"appId":"39620f76374c3677cc24cf60f113c84df","popupWidget":true,"automaticChatOpenOnNavigation":true};
-        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
-        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
-        window.kommunicate = m; m._globals = kommunicateSettings;
-    })(document, window.kommunicate || {});
+        </script>
+    </div>
+</body>
 
-</script>
-    </body> 
- 
 </html>
-
-
