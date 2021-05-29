@@ -114,7 +114,7 @@ export default function Count() {
 	const render = () => {
 		return (
 			<div>
-				<div id="display">{display()}</div>;
+				<div id="display">{display()}</div>
 				<div class="buttons">
 					<button class="btn-1" id="startStop" onClick={toggleStart}>
 						{isActive ? 'Stop' : 'Start'}
@@ -124,10 +124,10 @@ export default function Count() {
 					</button>
 				</div>
 
-				<p>Press start and let's starting breathing</p>
+				<p className="home-fs">Press start and let's starting breathing</p>
 				<div>
-					<p>
-          You took <span id="disp">{count}</span> Breaths
+					<p className="home-fs">
+          You took <span className="home-fs">{count}</span> Breaths
 					</p>
 				</div>
 				<div class="buttons">
