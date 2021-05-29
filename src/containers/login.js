@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { NavLink as RouterNavLink } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	Collapse,
 	Navbar,
@@ -40,6 +39,7 @@ const Login = (props) => {
 		<div id="login">
 			<div className="">
 				<Navbar color="light" light expand="md">
+          <RouterNavLink to="/"> Home </RouterNavLink>
 						<NavbarToggler onClick={toggle} />
 						<Collapse isOpen={isOpen} navbar>
 							<Nav className="d-none d-md-block" navbar>
@@ -67,16 +67,8 @@ const Login = (props) => {
 										</DropdownToggle>
 										<DropdownMenu>
 											<DropdownItem header>{user.name}</DropdownItem>
-											<DropdownItem
-												tag={RouterNavLink}
-												to="/profile"
-												className="dropdown-profile"
-												activeClassName="router-link-exact-active"
-											>
-												<FontAwesomeIcon icon="user" className="mr-3" /> Profile
-											</DropdownItem>
 											<DropdownItem id="qsLogoutBtn" onClick={() => {logoutWithRedirect(); reduxLogin()}}>
-												<FontAwesomeIcon icon="power-off" className="mr-3" /> Log out
+												Log out
 											</DropdownItem>
 										</DropdownMenu>
 									</UncontrolledDropdown>
@@ -110,13 +102,11 @@ const Login = (props) => {
 										</span>
 									</NavItem>
 									<NavItem>
-										<FontAwesomeIcon icon="user" className="mr-3" />
 										<RouterNavLink to="/profile" activeClassName="router-link-exact-active">
 											Profile
 										</RouterNavLink>
 									</NavItem>
 									<NavItem>
-										<FontAwesomeIcon icon="power-off" className="mr-3" />
 										<RouterNavLink to="#" id="qsLogoutBtn" onClick={() => logoutWithRedirect()}>
 											Log out
 										</RouterNavLink>
