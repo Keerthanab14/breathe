@@ -70,9 +70,12 @@ button:hover{
     min-height: 100vh;
 }
 
+.timer-prompt{
+    font-size: 25px;
+}
 #display{
     width: 100%;
-    font-size: 100px;
+    font-size: 50px;
     text-align: center;
     margin: 0px;
 }
