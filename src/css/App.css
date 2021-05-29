@@ -10,7 +10,7 @@ header {
   display: flex;
   flex-direction: column;
   width: 90vw;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   align-items: flex-end;
