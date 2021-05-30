@@ -18,30 +18,56 @@ export default function Count() {
 
 	//Define var to hold status
 	// let status = "stopped";
-	let [ isActive, setIsActive ] = useState(false);
+	let [ guidedActive, setGuidedActive ] = useState(false);
+	let [ freeActive, setFreeActive ] = useState(false);
 
 	useEffect(
 		() => {
 			let interval = null;
-			if (!!isActive) {
-				console.log('isActive');
+			if (!!freeActive & !guidedActive) {
+				console.log('isFree');
 				interval = setInterval(() => {
-          let first = async () => await setSeconds((seconds) => seconds + 1);
-          first().then(() => stopWatch());
+					
+					let first = async () => await setSeconds((seconds) => seconds + 1);
+					first().then(() => stopWatch());
 				}, 1000);
-			} else if (!isActive && breath == 'Inhale') {
-				console.log('isNotActive');
-				clearInterval(interval);
+			} else if (!!guidedActive && !freeActive) {
+				console.log('isguided');
+				if (seconds >= 0 ) {
+					interval = setInterval(() => {
+						let first = async () => await setSeconds((seconds) => seconds - 1);
+						first().then(() => setDisplays());
+					}, 1000);
+				} else {
+					let resetTime = async () => await setSeconds(() => 3);
+					resetTime().then(() => setDisplays());
+				}
 			}
+			// } else if (!freeActive && guidedActive) {
+			// 	console.log('inactive');
+			// 	clearInterval(interval);
+			// 	resetDisplay();
+			// }
 			return () => clearInterval(interval);
 		},
-		[ isActive, seconds ]
+		[ freeActive, seconds, guidedActive ]
 	);
 
 	// Logic to when to increment next value
-    const toggleStart = () => {
-      setIsActive(!isActive)
-    };
+	const toggleGuided = () => {
+		let first = async () => await resetDisplay();
+		first().then(() => {
+			setGuidedActive(!guidedActive);
+			setFreeActive(false);
+		});
+	};
+	const toggleFree = () => {
+		let first = async () => await resetDisplay();
+		first().then(() => {
+			setFreeActive(!freeActive);
+			setGuidedActive(false);
+		});
+	};
 
 	function stopWatch() {
 		// When mins change
@@ -54,7 +80,14 @@ export default function Count() {
 				setHours(hours++);
 			}
 		}
+		setDisplays();
+	}
+	function setDisplays() {
 		// If secs/mins/hrs are 1 digit, add leading 0
+		if (seconds == 0 ) {
+			setDisplaySeconds('00')
+		}
+
 		if (seconds < 10) {
 			setDisplaySeconds('0' + seconds.toString());
 		} else {
@@ -73,22 +106,24 @@ export default function Count() {
 	}
 
 	function reset() {
-		clearInterval(null);
+		clearInterval(interval);
 		setSeconds(0);
 		setMinutes(0);
 		setHours(0);
-		setCount(0);
-		setIsActive(false);
+		setGuidedActive(false);
+		setFreeActive(false);
 	}
 
-  const resetDisplay = () => {
-    let first = async () => await reset();
-    first().then(() => {
-      setDisplayHours("00");
-      setDisplayMinutes("00");
-      setDisplaySeconds("00");
-    });
-  }
+	function resetCount() {
+		setCount(0);
+	}
+
+	const resetDisplay = async () => {
+		let first = async () => await reset();
+		first().then(() => {
+			setDisplays();
+		});
+	};
 
 	function counter() {
 		setCount(count + 1);
@@ -102,9 +137,6 @@ export default function Count() {
 			setBreath('Inhale');
 			counter();
 		}
-    if (!isActive) {
-      setIsActive(true);
-    }
 	}
 
 	const display = () => {
@@ -115,23 +147,26 @@ export default function Count() {
 		return (
 			<div>
 				<div id="display">{display()}</div>
-				<div class="buttons">
-					<button class="btn-1" id="startStop" onClick={toggleStart}>
-						{isActive ? 'Stop' : 'Start'}
+				<div className="buttons">
+					<button className="btn-1" onClick={toggleGuided}>
+						{guidedActive ? 'Stop' : 'Guided Breathing'}
 					</button>
-					<button class="btn-1" id="reset" onClick={resetDisplay}>
-						Reset
+					<button className="btn-1" onClick={toggleFree}>
+						{freeActive ? 'Stop' : 'Free Breathing'}
+					</button>
+					<button className="btn-1" id="reset" onClick={resetCount}>
+						Reset Breath Count
 					</button>
 				</div>
 
 				<p className="home-fs">Press start and let's starting breathing</p>
 				<div>
 					<p className="home-fs">
-          You took <span className="home-fs">{count}</span> Breaths
+						You took <span className="home-fs">{count}</span> Breaths
 					</p>
 				</div>
-				<div class="buttons">
-					<button class="Breather" onClick={change} id="Breather" value="Inhale">
+				<div className="buttons">
+					<button className="Breather" onClick={change} id="Breather" value="Inhale">
 						{breath == 'Inhale' ? 'Inhale' : 'Exhale'}
 					</button>
 				</div>
@@ -139,5 +174,5 @@ export default function Count() {
 		);
 	};
 
-	return <div class="count-container"> {render()} </div>;
+	return <div className="count-container"> {render()} </div>;
 }
