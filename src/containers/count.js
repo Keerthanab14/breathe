@@ -19,6 +19,7 @@ export default function Count() {
 	//Define var to hold status
 	// let status = "stopped";
 	let [ isActive, setIsActive ] = useState(false);
+	let [ isGuided, setIsGuided ] = useState(null);
 
 	useEffect(
 		() => {
@@ -117,7 +118,11 @@ export default function Count() {
 				<div id="display">{display()}</div>
 				<div class="buttons">
 					<button class="btn-1" id="startStop" onClick={toggleStart}>
-						{isActive ? 'Stop' : 'Start'}
+						{isActive ? 'Stop' : 'Guided Breathing'}
+					</button>
+				<div class="buttons">
+					<button class="btn-1" id="startStop" onClick={toggleStart}>
+						{isActive ? 'Stop' : 'Free Breathing'}
 					</button>
 					<button class="btn-1" id="reset" onClick={resetDisplay}>
 						Reset
