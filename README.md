@@ -1,4 +1,4 @@
-#heading-1 "Breathe"
+# BREATHE #
 <br><br>
 Resources are not always available and accessible, but Breathe can provide online aid to anyone with the internet. In this day and age during COVID-19, there is an increase in isolation and loneliness which may lead to the development of mental health issues.
 
