@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import '../css/style.css';
 
+import BgMusic from '../assets/background.mp3';
+import SoundIn from '../assets/breathIn.mp3';
+import SoundOut from '../assets/breathOut.mp3';
+
+
 export default function Count() {
 	let [ seconds, setSeconds ] = useState(0);
 	let [ minutes, setMinutes ] = useState(0);
 	let [ hours, setHours ] = useState(0);
 	let [ breath, setBreath ] = useState('Inhale');
+	let [ audio, setAudio ] = useState(false);
 
 	let [ count, setCount ] = useState(0);
 	//Define vars to hold display value
@@ -20,6 +26,9 @@ export default function Count() {
 	// let status = "stopped";
 	let [ guidedActive, setGuidedActive ] = useState(false);
 	let [ freeActive, setFreeActive ] = useState(false);
+
+	let audioIn = new Audio(SoundIn);
+	let audioOut = new Audio(SoundOut);
 
 	useEffect(
 		() => {
@@ -132,8 +141,14 @@ export default function Count() {
 	//Breathe IN / OUT
 	function change() {
 		if (breath == 'Inhale') {
+			audioOut.pause();
+			audioOut.currentTime = 0;
+			audioIn.play();
 			setBreath('Exhale');
 		} else {
+			audioIn.pause();
+			audioIn.currentTime = 0;
+			audioOut.play();
 			setBreath('Inhale');
 			counter();
 		}
@@ -170,6 +185,7 @@ export default function Count() {
 						{breath == 'Inhale' ? 'Inhale' : 'Exhale'}
 					</button>
 				</div>
+				
 			</div>
 		);
 	};
