@@ -42,7 +42,9 @@ const Header = (props) => {
 	return (
 		<Navbar light expand="md" className="custom-nav App-header">
 			<Container className="justify">
-				<NavbarBrand><img src={Logo} alt="logo" class="logo"/></NavbarBrand>
+				<NavbarBrand>
+					<img src={Logo} alt="logo" class="logo" />
+				</NavbarBrand>
 				<NavbarToggler onClick={toggle} />
 				<Collapse isOpen={isOpen} navbar className="flex-end custom-fg-0">
 					<Nav className="mr-auto" navbar>
@@ -52,23 +54,26 @@ const Header = (props) => {
 							</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink to="/analysis" exact activeClassName="router-link-exact-active" tag={RouterNavLink}>
+							<NavLink
+								to="/analysis"
+								exact
+								activeClassName="router-link-exact-active"
+								tag={RouterNavLink}
+							>
 								Analysis
 							</NavLink>
 						</NavItem>
 						{!isAuthenticated && (
-							<NavItem>
-								<Button
-									id="qsLoginBtn"
-									color="primary"
-									className="btn-margin"
-									onClick={() => {
-										loginWithRedirect();
-										reduxLogin();
-									}}
-								>
-									Log in
-								</Button>
+							<NavItem
+								onClick={() => {
+									loginWithRedirect();
+									reduxLogin();
+								}}
+							>
+								<span className="nav-link cursor">
+								Log in
+
+								</span>
 							</NavItem>
 						)}
 					</Nav>
