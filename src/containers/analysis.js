@@ -34,7 +34,7 @@ export const Analysis = (props) => {
 	}, []);
 
 	return (
-		<div className="mb-5 viewer" id="analysis">
+		<div className="viewer" id="analysis">
 			<div className="custom-container">
 				<h1>Breathing Trend for {user.given_name}</h1>
 				<AreaChart

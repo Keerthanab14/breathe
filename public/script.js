@@ -125,32 +125,32 @@ function counter(){
     
 }
 
-// Reset Timer and Button click counter
-function reset_count() {
-    var disp = document.getElementById("disp");
-    disp.innerHTML = 0;
+// // Reset Timer and Button click counter
+// function reset_count() {
+//     var disp = document.getElementById("disp");
+//     disp.innerHTML = 0;
 
-}
-
-
-
-// 3 second countdown
+// }
 
 
-let time = 3
-const countdownEl = document.getElementById("timer");
-setInterval(updateCountdown, 1000);
 
-function reset_timer(){
-    time = 3
-}
-function updateCountdown() {
+// // 3 second countdown
+
+
+// let time = 3
+// const countdownEl = document.getElementById("timer");
+// setInterval(updateCountdown, 1000);
+
+// function reset_timer(){
+//     time = 3
+// }
+// function updateCountdown() {
    
-    if(time >= 0){
-    document.getElementById("timer").innerHTML = time;
-    time--;
-    }
-}
+//     if(time >= 0){
+//     document.getElementById("timer").innerHTML = time;
+//     time--;
+//     }
+// }
 
 
 

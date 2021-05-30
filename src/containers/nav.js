@@ -43,7 +43,7 @@ const Header = (props) => {
 		<Navbar light expand="md" className="custom-nav App-header">
 			<Container className="justify">
 				<NavbarBrand>
-					<img src={Logo} alt="logo" class="logo" />
+					<img src={Logo} alt="logo" className="logo" />
 				</NavbarBrand>
 				<NavbarToggler onClick={toggle} />
 				<Collapse isOpen={isOpen} navbar className="flex-end custom-fg-0">
