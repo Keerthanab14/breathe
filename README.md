@@ -19,10 +19,8 @@ choose guided breathing to breathe along with another person on the other side, 
 BREATHE CHATBOT:
 A virtual companion to talk to and express your feelings. Talk to this chatbot and let the chatbot provide you with some free resources to improve your mental health. What more can it do other than giving a mere list of resources? It can also provide you with helpline numbers or book an appointment as per your need.
 
-![7ae23aescreen_shot_2021_05_29_at_11_14_18_pm](https://user-images.githubusercontent.com/60786451/120093490-50089080-c138-11eb-8c25-adb9288dfb30.png)
-
-![980b3adscreen_shot_2021_05_29_at_11_14_27_pm](https://user-images.githubusercontent.com/60786451/120093492-54cd4480-c138-11eb-9566-113d9fbe5f46.png)
+![Untitled design](https://user-images.githubusercontent.com/60786451/120093729-b2ae5c00-c139-11eb-95b7-66efa7006eb0.png)
 
 
-**What's next for BREATHE?**
+**What's next for BREATHE?**<br>
 a mobile app for Breathe, as well as partnering with existing mental health and wellness foundations to seek advice on improvements to the applications that will benefit people in need of it. We also plan on adding more features such as sharing data, and an AI that is able to detect breathing audio and recognize the frequency of the user's breathing and prompting them to breath faster or slower to obtain a regular breathing rate.
