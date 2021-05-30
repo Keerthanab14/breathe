@@ -18,6 +18,7 @@ import {
 	Container
 } from 'reactstrap';
 
+import Logo from '../assets/logo.png';
 import '../css/nav.css';
 
 const Header = (props) => {
@@ -39,29 +40,40 @@ const Header = (props) => {
 	};
 
 	return (
-		<Navbar color="light" light expand="md" className="custom-nav">
-			<Container className="custom-nav">
+		<Navbar light expand="md" className="custom-nav App-header">
+			<Container className="justify">
+				<NavbarBrand>
+					<img src={Logo} alt="logo" class="logo" />
+				</NavbarBrand>
 				<NavbarToggler onClick={toggle} />
-				<Collapse isOpen={isOpen} navbar className="flex-end">
+				<Collapse isOpen={isOpen} navbar className="flex-end custom-fg-0">
 					<Nav className="mr-auto" navbar>
 						<NavItem>
 							<NavLink to="/" exact activeClassName="router-link-exact-active" tag={RouterNavLink}>
 								Home
 							</NavLink>
 						</NavItem>
+						<NavItem>
+							<NavLink
+								to="/analysis"
+								exact
+								activeClassName="router-link-exact-active"
+								tag={RouterNavLink}
+							>
+								Analysis
+							</NavLink>
+						</NavItem>
 						{!isAuthenticated && (
-							<NavItem>
-								<Button
-									id="qsLoginBtn"
-									color="primary"
-									className="btn-margin"
-									onClick={() => {
-										loginWithRedirect();
-										reduxLogin();
-									}}
-								>
-									Log in
-								</Button>
+							<NavItem
+								onClick={() => {
+									loginWithRedirect();
+									reduxLogin();
+								}}
+							>
+								<span className="nav-link cursor">
+								Log in
+
+								</span>
 							</NavItem>
 						)}
 					</Nav>

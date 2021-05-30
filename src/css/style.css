@@ -72,7 +72,7 @@ button:hover{
 
 #display{
     width: 100%;
-    font-size: 100px;
+    font-size: 3.8rem;
     text-align: center;
     margin: 0px;
 }
@@ -93,26 +93,25 @@ p{
 
 .buttons{
     text-align: center;
-    margin-bottom: 1cm;
+    margin: 1rem 0 1rem 0;
+    display: flex;
+    justify-content: center;
 }
 
 body {
    /* background-color: #b1a178;*/
     background-color: #09c7fb;
-background-image: linear-gradient(315deg, #09c7fb 0%, #93fb9d 74%);
-
-
+    background-image: linear-gradient(315deg, #09c7fb 0%, #93fb9d 74%);
 }
 
-
 .btn-1 {
-    width: 100;
-    height: 100px;
+    width: 100%;
+    /* height: 100px; */
     border: none;
-    color: black;
-   background-color: #89d8d3;
-background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
-    border-radius: 30%;
+    color: rgba(255, 255, 255, 0.884);
+    background-color: #03c8a8;
+    /* background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%); */
+    border-radius: 0%;
     box-shadow: inset 0 0 0 0 #006923;
     transition: ease-out 0.3s;
     font-size:  2rem;
@@ -154,9 +153,9 @@ background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
     border: none;
     cursor:  pointer;
     font-size: 60px;
-    color: black;
-background-color: #00bfb2;
-background-image: linear-gradient(315deg, #00bfb2 0%, #028090 74%);
+    /* color: black; */
+    background-color: #00bfb2;
+    background-image: linear-gradient(315deg, #00bfb2 0%, #028090 94%);
 
     box-shadow: inset 0 0 0 0 #006923;
     transition: ease-out 0.3s;
@@ -171,6 +170,8 @@ background-image: linear-gradient(315deg, #00bfb2 0%, #028090 74%);
     color: white;
 }
 
-
+.timer-prompt{
+    font-size: 25px;
+}
 
 

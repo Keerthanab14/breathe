@@ -1,7 +1,26 @@
 .custom-nav {
     min-height: 5rem;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.justify {
+    display: flex;
+    justify-content: space-between;
 }
 
 .flex-end {
     align-items: flex-end;
+}
+
+img.logo {
+    height: 100px;
+}
+.custom-fg-0 {
+    flex-grow: 0;
+}
+
+#w-gbg {
+
 }

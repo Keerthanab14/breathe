@@ -2,19 +2,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: #f8f9fa00!important;
   min-height: 100vh;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.App-header {
+  width: 100vw;
+  padding: 0;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 80%, rgba(255, 255, 255, 0) 100%);
 }
 header {
   display: flex;
   flex-direction: column;
-  width: 90vw;
-  /* position: fixed; */
   top: 0;
   left: 0;
   align-items: flex-end;
-  /* min-height: 5rem; */
+  margin: none;
 }
 
 .custom-container {
@@ -23,7 +27,7 @@ header {
   align-items: center;
   justify-content: center;
   width: 80vw;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .viewer {
@@ -33,4 +37,8 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.cursor {
+  cursor: pointer;
 }

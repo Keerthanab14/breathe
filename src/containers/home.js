@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import '../css/home.css';
 import Count from '../containers/count';
@@ -12,9 +11,6 @@ const Home = (props) => {
 	return (
 		<div id="home">
 			<div className="custom-container">
-				<Link to="/analysis">
-					<span className="round-main-btn"> Analysis </span>
-				</Link>
 				<Count />
 			</div>
 		</div>
