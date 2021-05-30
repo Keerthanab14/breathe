@@ -1,4 +1,5 @@
-Project: "Breathe"
+#heading-1 "Breathe"
+<br><br>
 Resources are not always available and accessible, but Breathe can provide online aid to anyone with the internet. In this day and age during COVID-19, there is an increase in isolation and loneliness which may lead to the development of mental health issues.
 
 Surprisingly, mental health guidance also became less available and it is harder for people to get the help they need instantly. We came up with Breathe to provide instant aid for individuals that need to self-regulate their breathing or mental health in case of emergencies when they cannot seek professional help. We hope for this app to help people in need that cannot find the professional assistance they need.
