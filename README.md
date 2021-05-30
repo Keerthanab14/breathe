@@ -23,5 +23,5 @@ A virtual companion to talk to and express your feelings. Talk to this chatbot a
 ![Untitled design](https://user-images.githubusercontent.com/60786451/120093729-b2ae5c00-c139-11eb-95b7-66efa7006eb0.png)
 
 
-### What's next for BREATHE? ###<br>
+### What's next for BREATHE? ###
 a mobile app for Breathe, as well as partnering with existing mental health and wellness foundations to seek advice on improvements to the applications that will benefit people in need of it. We also plan on adding more features such as sharing data, and an AI that is able to detect breathing audio and recognize the frequency of the user's breathing and prompting them to breath faster or slower to obtain a regular breathing rate.
